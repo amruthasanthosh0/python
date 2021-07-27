@@ -11,16 +11,20 @@ class linkedlist:
       while(temp):
          print (temp.data)
          temp=temp.next
-if __name__=='__main__':
-   llist=linkedlist()
-   llist.head=Node(1)
-   second=Node(2)
-   third=Node(3)
-   llist.head.next=second
-   second.next=third
-   llist.printlist()
-          
+   def push(self,new_data):
+      new_node=Node(new_data)
+      new_node.next=self.head
+      self.head=new_node
+      
+n=int(input("enter the number of elements"))
+llist=linkedlist()
+print("enter the elements")
+for i in range(0,n):
+   l=int(input())
+   llist.push(l)
    
+print ("given linkedlist is")
+llist.printlist()
    
    
    
